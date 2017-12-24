@@ -1,0 +1,62 @@
+{% extends '../template.html' %}
+
+{% block 'head' %}
+
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home/base.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/normailze.css'%}">
+
+{% endblock %}
+
+{% block 'body' %}
+
+<div id="loader-bg">
+    <div class="loader"></div>
+</div>
+<div id="sub-window">
+    <div id="sub-controls">
+        <div id="sub-control-close">
+            <div onclick="closeSubWindow(this)">
+                <img src="{% static 'svg/home/twitter.svg' %}" alt="Twitter" class="logo">
+            </div>
+        </div>
+    </div>
+    <div id="sub-view" class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</div>
+<header>
+    <div id="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav class="container">
+        <ul class="row">
+            <li class="col-4" onclick="openPage(this, '#page-home')">Hey</li>
+            <li class="col-4" onclick="openPage(this, '#page-about')">About</li>
+            <li class="col-4" onclick="openPage(this, '#page-contact')">Contact</li>
+            <li class="col-4" onclick="openPage(this, '#page-photos')">Photos</li>
+            <li class="col-4" onclick="openPage(this, '#page-blog')">Blog</li>
+            <li class="col-4" onclick="openPage(this, '#page-projects')">Projects</li>
+        </ul>
+        <p id="quotation"></p>
+    </nav>
+</header>
+
+<main>
+    <article class="page" id="page-home">{% include './page_home.html'%}</article>
+    <article class="page" id="page-contact">{% include './page_contact.html'%}</article>
+    <article class="page" id="page-about">{% include './page_about.html'%}</article>
+    <article class="page" id="page-photos">{% include './page_photos.html'%}</article>
+    <article class="page" id="page-blog">{% include './page_blog.html'%}</article>
+    <article class="page" id="page-projects">{% include './page_projects.html'%}</article>
+</main>
+<script type="text/javascript" src="{% static 'js/jquery3.2.1.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/home/main.js'%}"></script>
+{% endblock %}

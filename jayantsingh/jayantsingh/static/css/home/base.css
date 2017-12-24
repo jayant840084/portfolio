@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700');
+
+
+#loader-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000000;
+    z-index: 99999999;
+}
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+.loader {
+    margin: 0 auto;
+    font-size: 10px;
+    position: relative;
+    top: 40%;
+    text-indent: -9999em;
+    border: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left-color: #ffffff;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+}
+
+/* ROOT FONT STYLES */
+
+* {
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-family: 'Raleway', sans-serif;
+
+    color: #333447;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.375rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+}
+
+p {
+    font-size: 1.125rem;
+    font-weight: 200;
+    line-height: 1.8;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-heavy {
+    font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.justify {
+    text-align: justify;
+}
+
+/* ==== GRID SYSTEM ==== */
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    position: relative;
+    width: 100%;
+}
+
+.row [class^="col"] {
+    float: left;
+    margin: 0.5rem 2%;
+    min-height: 0.125rem;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    width: 96%;
+}
+
+.col-1-sm {
+    width: 4.33%;
+}
+
+.col-2-sm {
+    width: 12.66%;
+}
+
+.col-3-sm {
+    width: 21%;
+}
+
+.col-4-sm {
+    width: 29.33%;
+}
+
+.col-5-sm {
+    width: 37.66%;
+}
+
+.col-6-sm {
+    width: 46%;
+}
+
+.col-7-sm {
+    width: 54.33%;
+}
+
+.col-8-sm {
+    width: 62.66%;
+}
+
+.col-9-sm {
+    width: 71%;
+}
+
+.col-10-sm {
+    width: 79.33%;
+}
+
+.col-11-sm {
+    width: 87.66%;
+}
+
+.col-12-sm {
+    width: 96%;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hidden-sm {
+    display: none;
+}
+
+@media only screen and (min-width: 33.75em) {  /* 540px */
+    .container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 45em) {  /* 720px */
+    .col-1 {
+        width: 4.33%;
+    }
+
+    .col-2 {
+        width: 12.66%;
+    }
+
+    .col-3 {
+        width: 21%;
+    }
+
+    .col-4 {
+        width: 29.33%;
+    }
+
+    .col-5 {
+        width: 37.66%;
+    }
+
+    .col-6 {
+        width: 46%;
+    }
+
+    .col-7 {
+        width: 54.33%;
+    }
+
+    .col-8 {
+        width: 62.66%;
+    }
+
+    .col-9 {
+        width: 71%;
+    }
+
+    .col-10 {
+        width: 79.33%;
+    }
+
+    .col-11 {
+        width: 87.66%;
+    }
+
+    .col-12 {
+        width: 96%;
+    }
+
+    .hidden-sm {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 60em) { /* 960px */
+    .container {
+        width: 75%;
+        max-width: 60rem;
+    }
+    nav ul {
+        padding-top: 10px;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.button {
+    cursor: pointer;
+    color: rgba(255, 255, 255,  0.8);
+    border: 2px solid rgba(255, 255, 255,  0.8);
+    padding: 10px 80px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background-color: transparent;
+}
+
+.button:hover {
+    background: #ffffff;
+    color: transparent;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.email {
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.logo {
+    width: 30px;
+    height: auto;
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+
+body {
+    background-color: #1d1e21;
+}
+
+
+nav {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav ul {
+    padding-top: 10px;
+}
+
+nav ul li a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+#toggle {
+    width: 30px;
+    height: 40px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+#toggle span {
+    width: inherit;
+    height: 4px;
+    background: #ffffff;
+    margin: 7px 0;
+    display: block;
+    transform: skewX(45deg);
+}
+
+
+@media only screen and (min-width: 60em) { /* 960px */
+    nav ul {
+        padding-top: 50px;
+    }
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    transition-duration: .6s;
+}
+
+#page-home {
+    /* background-image: linear-gradient(45deg, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%); */
+    background: #050505;
+    z-index: 999;
+}
+
+#page-contact {
+    background: #152F3F;
+    z-index: 998;
+}
+
+#page-about {
+    background: #14190B;
+    z-index: 997;
+}
+
+#page-photos {
+    background: #1E1314;
+    z-index: 996;
+}
+
+#page-blog {
+    background: #261801;
+    z-index: 995;
+}
+
+#page-projects {
+    background: #0D1023;
+    z-index: 994;
+}
+
+
+
+
+
+
+p.page-title {
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 5rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255,  0.8);
+}
+
+.hire-me {
+    border-radius: 25px;
+    transition-duration: 0.4s;
+}
+
+.hire-me:hover {
+    color: #152F3F;
+}
+
+#quotation {
+    padding: 50px 0;
+}
+
+
+
+
+
+img.me {
+    margin-top: 40px;
+    width: 50%;
+    margin-left: 25%;
+    display: inline-block;
+    justify-content: center;
+    border-radius: 50%;
+    height: auto;
+}
+
+.home-intro {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin: 0;
+}
+
+.home-intro span {
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 5rem;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255,  0.8);
+}
+
+@media only screen and (min-width: 33.75em) {
+    .home-intro {
+        padding-bottom: 50px;
+    }
+    img.me {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.load-more {
+    margin: 100px;
+}
+
+
+
+#sub-window {
+    display: none;
+    width:100%;
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999999;
+}
+
+ul.bubbles{
+    text-align: center;
+}
+
+ul.bubbles a {
+    text-decoration: none;
+}
+
+ul.bubbles li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px 50px;
+    margin: 10px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.4);
+
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.shadow {
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
