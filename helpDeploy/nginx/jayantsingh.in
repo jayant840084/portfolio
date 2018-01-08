@@ -1,10 +1,10 @@
 server {
     listen 80;
-    server_name _;
+    server_name jayantsingh.in www.jayantsingh.in;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/jayant/portfolio;
+        root /home/jayant/portfolio/static;
     }
 
     location / {
