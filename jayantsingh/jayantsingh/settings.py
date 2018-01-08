@@ -24,7 +24,7 @@ SECRET_KEY = '91+5-u_ty2az$mt99m81(iq$!zwr!%dodpp5ldtactct+l^)ad'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jayantsingh.in', '192.168.1.12', '127.0.0.1']
+ALLOWED_HOSTS = ['jayantsingh.in', '139.59.38.131']
 
 # Application definition
 
@@ -121,6 +121,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'jayantsingh/static'),
 ]
 
-STATIC_ROOT = "/var/www/jayantsingh.in/html/static/"
+STATIC_ROOT = "/home/jayant/portfolio"
 
 STATIC_URL = '/static/'
