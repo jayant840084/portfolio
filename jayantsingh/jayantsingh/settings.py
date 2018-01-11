@@ -24,7 +24,13 @@ SECRET_KEY = '91+5-u_ty2az$mt99m81(iq$!zwr!%dodpp5ldtactct+l^)ad'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jayantsingh.in', '139.59.38.131']
+ALLOWED_HOSTS = [
+    'jayantsingh.in',
+    '139.59.38.131',
+    'localhost',
+    '127.0.0.1',
+    '172.20.10.11',
+    '192.168.43.100']
 
 # Application definition
 

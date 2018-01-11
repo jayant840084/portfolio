@@ -25,14 +25,14 @@ var data = {
 };
 
 $(function () {
-
+    
     function init() {
-
+        
         setRandomColors();
         centerVertically();
         // data initialization
         data.page_stack = $('main').children();
-
+        
         // toggle button
         $('#toggle').on('click', function () {
             data.toggle.open ? closeMenu() : openMenu();
@@ -46,7 +46,9 @@ $(window).bind('resize', function () {
 });
 
 $(window).on('load', function () {
-    hideLoading();
+    $('#js-wrapper').css('display', 'block');
+    setTimeout(() => hideLoading() , 500);
+    // hideLoading();
 });
 
 function showLoading() {
@@ -58,19 +60,19 @@ function hideLoading() {
 }
 
 function centerVertically() {
-
+    
     /*
-     * to center an element add centerVertically attribute and assign a parent to which
-     * it is to be aligned and give it a unique id
-     */
+    * to center an element add centerVertically attribute and assign a parent to which
+    * it is to be aligned and give it a unique id
+    */
     $('[centerVertically]').each(function (index, element) {
         var parentElement = null;
         if (element.getAttribute('centerVertically') === 'window' ||
-            element.getAttribute('centerVertically') === 'document')
-            parentElement =  window;
+        element.getAttribute('centerVertically') === 'document')
+        parentElement =  window;
         else parentElement = element.getAttribute('centerVertically');
         var elementToCenter = '#' + element.id;
-
+        
         if ($(window).width() > 720) {
             var marginTop = ($(parentElement).height() - $(elementToCenter).height()) / 2;
             $(elementToCenter).css('margin-top', marginTop);
@@ -79,14 +81,14 @@ function centerVertically() {
 }
 
 function openMenu() {
-
+    
     setQuotation();
     // activate click listeners for page stack when menu is opened
     activateStackPageClickListeners();
-
+    
     // set data.toggle.open to true to imply that menu is open
     data.toggle.open = true;
-
+    
     createMenuPageStack();
 }
 
@@ -94,17 +96,17 @@ function openMenu() {
 function closeMenu() {
     // activate click listeners for page stack when menu is opened
     deactivateStackPageClickListeners();
-
+    
     // set data.toggle.open to false to imply that menu is closed
     data.toggle.open = false;
-
+    
     destroyMenuPageIndex();
-
+    
     $(data.page_stack[0]).css('transform', 'translateY(0%)');
     $(data.page_stack[0]).css('border-radius', '0');
     $(data.page_stack[0]).css('z-index', data.stack_zindex + 1);
-
-
+    
+    
 }
 
 
@@ -173,7 +175,7 @@ function setRandomColors() {
 function setQuotation() {
     if ($(window).width() > 720) {
         $('p#quotation').html(data.quotations[getRandomInt(0, data.quotations.length)])
-            .css('color', getRandomDarkColor());
+        .css('color', getRandomDarkColor());
     }
 }
 
@@ -189,7 +191,7 @@ function getRandomInt(min, max) {
 
 
 function openSubWindow() {
-
+    
 }
 
 
