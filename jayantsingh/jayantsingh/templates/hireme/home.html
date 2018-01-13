@@ -8,51 +8,65 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/hireme/base.css'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/normailze.css'%}">
 
+<script>
+    function submitHireRequest(event, data) {
+        console.log(event)
+        console.log(data)
+    }
+</script>
+
 {% endblock %}
 
 {% block 'body' %}
-<div class="container">
+<header>
+    <nav>
+        <div class="container">
+            <div class="col-12">
+                <a href="https://jayantsingh.in"><p>HOME</p></a>
+            </div>
+        </div>
+    </nav>
+    {% if success %}
+    <div class="success">
+        <div class="row">
+            <div class="col-12">
+                <p>Thankyou. Expect a response in 24 hours.</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <div class="row">
         <div class="col-12">
             <h1>A few quick questions</h1>
-            <form action="">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="padding">
-                            <input type="text" placeholder="NAME *">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="padding">
-                            <input type="email" placeholder="EMAIL ADDRESS *">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="padding">
-                            <input type="number" placeholder="PHONE NUMBER">
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="padding">
-                            <input type="text" placeholder="WEBSITE">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="padding">
-                            <textarea name="work" id="work" cols="30" rows="10" placeholder="DESCRIBE YOUR PROJECT. WHAT IT IS? WHAT IS YOUR GOAL? HOW CAN I HELP? TIMELINE AND BUDGET."></textarea>
-                        </div>
-                    </div>
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <div class="padding">
-                            <input type="submit" value="HIRE ME">
-                        </div>
-                    </div>
-                    <div class="col-4"></div>
-                </div>
-            </form>
         </div>
     </div>
+</header>
+<div class="container">
+    <form action="/hire-me/" method="POST" class="row">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="col-6">
+            <div class="fieldWrapper">
+                {{ form.name.errors }}
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="fieldWrapper">
+                {{ form.email.errors }}
+                {{ form.email }}
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="fieldWrapper">
+                {{ form.description.errors }}
+                {{ form.description }}
+            </div>
+        </div>
+        <div class="col-12">
+            <input type="submit" value="Submit" onclick="submitHireRequest();" />
+        </div>
+    </form>
 </div>
 
 {% endblock %}
